@@ -5,16 +5,20 @@ import { getSuggestions, getSuggestionsApi } from "./utils";
 function App() {
   return (
     <>
-      <Autocomplete
-        key="country"
-        label="Country (fake async)"
-        getSuggestions={getSuggestions}
-      />
-      <Autocomplete
-        key="recipes"
-        label="Recipes (with api)"
-        getSuggestions={getSuggestionsApi}
-      />
+      <div className="height-1-2vh">
+        <Autocomplete
+          key="country"
+          label="Country (fake async)"
+          getSuggestions={getSuggestions}
+        />
+      </div>
+      <div className="height-1-2vh">
+        <Autocomplete
+          key="recipes"
+          label="Recipes (with api)"
+          getSuggestions={getSuggestionsApi}
+        />
+      </div>
     </>
   );
 }

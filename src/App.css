@@ -8,3 +8,22 @@
   padding: 2rem;
   text-align: center;
 }
+
+/* height 1/5 of viewport height */
+.height-1-2vh {
+  height: 50vh;
+}
+
+/* sr-only */
+.sr-only {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
