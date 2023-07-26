@@ -41,9 +41,10 @@
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  z-index: 99;
   max-height: 300px;
   overflow-y: scroll;
+  background-color: #333;
 }
 
 .autocomplete-results:focus {

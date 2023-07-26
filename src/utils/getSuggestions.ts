@@ -6,9 +6,9 @@ import { countries } from ".";
  * @param query
  * @param signal signal is an AbortSignal object instance; it is used to communicate with/abort a DOM request.
  */
-const getAutocompleteSuggestions = (
+const getSuggestions = (
   query: string,
-  signal: AbortSignal
+  signal?: AbortSignal
 ): Promise<string[]> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -23,4 +23,4 @@ const getAutocompleteSuggestions = (
   });
 };
 
-export default getAutocompleteSuggestions;
+export default getSuggestions;

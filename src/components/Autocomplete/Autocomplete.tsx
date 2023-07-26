@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useDebounce, getSuggestions } from "../../utils";
+import { useDebounce } from "../../utils";
 import "./Autocomplete.css";
 import { AutocompleteProps } from "./Autocomplete.types";
 
@@ -12,11 +12,14 @@ const resultsCache = {} as { [key: string]: string[] };
  *
  * @param props AutocompleteProps
  * @param props.label label for input
+ * @param props.onChange onChange event handler
+ * @param props.getSuggestions getSuggestions function returns a promise of string[]
  * @returns
  */
 function Autocomplete({
-  label = "Country",
+  label,
   onChange,
+  getSuggestions,
   ...props
 }: AutocompleteProps) {
   const [query, setQuery] = useState(""); //query = input value
@@ -87,6 +90,7 @@ function Autocomplete({
 
       const filteredSuggestions = await getSuggestions(debouncedQuery, signal);
 
+      // cache new results
       if (filteredSuggestions.length > 0) {
         resultsCache[debouncedQuery] = filteredSuggestions;
       }
@@ -131,11 +135,7 @@ function Autocomplete({
           to browse.
         </div>
       )}
-      <label
-        htmlFor="autocomplete"
-        className="inputLabel"
-        aria-label="choose a country"
-      >
+      <label htmlFor="autocomplete" className="inputLabel">
         {label}
       </label>
       <div className="relative">
