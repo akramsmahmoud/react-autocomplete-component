@@ -1,16 +1,7 @@
+/**
+ * List of countries
+ */
 export const countries = [
-  "berry",
-  "apple",
-  "banana",
-  "orange",
-  "grape",
-  "strawberry",
-  "blueberry",
-  "raspberry",
-  "blackberry",
-  "cranberry",
-  "cherry",
-
   "Afghanistan",
   "Albania",
   "Algeria",
